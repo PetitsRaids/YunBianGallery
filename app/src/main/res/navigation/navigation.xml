@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.raids.gallery.view.fragment.MainFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_pagerFragment"
+            app:destination="@id/pagerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_favouriteFragment"
+            app:destination="@id/favouriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.raids.gallery.view.fragment.ViewPager2Fragment"
+        android:label="@string/browser"
+        tools:layout="@layout/fragment_pager" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.raids.gallery.view.fragment.FavouriteFragment"
+        android:label="@string/favourite"
+        tools:layout="@layout/favourite_fragment">
+        <action
+            android:id="@+id/action_favouriteFragment_to_pagerFragment2"
+            app:destination="@id/pagerFragment" />
+    </fragment>
+</navigation>
